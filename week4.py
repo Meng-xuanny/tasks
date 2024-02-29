@@ -25,6 +25,32 @@ import turtle
 #     turtle.left(ANGLE)
 
 
+number_students = int(input("Enter the number of students: "))
+while number_students < 0 :
+    print("The number of students can't be negative")
+
+number_tests = int (input("Enter the number of tests: "))
+while number_tests < 0 :
+    print("The number of tests can't be negative")
+
+for student in range(number_students):
+    print(f"Student number {student + 1}")
+    print('------')
+
+    total = 0
+
+    for test in range(number_tests):
+        score = float(input(f'Enter the score for test {test + 1}: '))
+
+        while score < 0:
+            print("The score can't be negative.")
+
+        total += score
+
+    average = total / number_tests
+    print(f"The average score for student {student + 1} is {average: .1f} ")
+    print()
+
 #1
 # x=100
 #
@@ -73,7 +99,10 @@ import turtle
 # amount1=50
 # amount2=10
 # if (amount1 > 10) and (amount2 < 100):
-#     print(amount1,amount2)
+#     if (amount1 > amount2):
+#         print(amount1)
+#     else:
+#         print(amount2)
 
 
 #6
@@ -86,10 +115,10 @@ import turtle
 
 
 #7
-points=3
-
-if points < 9 or points > 51:
-    print('invalid points')
-else:
-    print('valid points')
+# points=3
+#
+# if points < 9 or points > 51:
+#     print('invalid points')
+# else:
+#     print('valid points')
 
