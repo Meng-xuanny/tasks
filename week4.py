@@ -26,12 +26,15 @@ import turtle
 
 
 number_students = int(input("Enter the number of students: "))
-while number_students < 0 :
+while number_students <= 0 :
     print("The number of students can't be negative")
+    number_students = int(input("Enter the number of students: "))
 
 number_tests = int (input("Enter the number of tests: "))
-while number_tests < 0 :
+while number_tests <= 0 :
     print("The number of tests can't be negative")
+    number_tests = int(input("Enter the number of tests: "))
+
 
 for student in range(number_students):
     print(f"Student number {student + 1}")
@@ -48,8 +51,8 @@ for student in range(number_students):
         total += score
 
     average = total / number_tests
-    print(f"The average score for student {student + 1} is {average: .1f} ")
-    print()
+    print(f"The average test score for student {student + 1} is {average}.")
+
 
 #1
 # x=100
