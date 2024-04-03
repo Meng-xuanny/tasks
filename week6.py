@@ -24,7 +24,7 @@ import random
 # rand = random.randint(1,100)
 # print(rand)
 
-#5
+# 5
 # def half(value):
 #     return value / 2
 # number = 6
@@ -73,26 +73,31 @@ import random
 #
 # count_lower(mystring)
 #
-# 11
+11
 # def ifAU(str):
 #     lower_str=str.lower()
-#     if 'au' in lower_str:
+#     if str.endswith('au'):
 #         return True
-#     else:
-#         return False
+#     return False
 #
 # print(ifAU('luluart'))
 
 #12
 # def reverse_string(str):
 #     result=''
-#     index=len(str)
-#     while index >0:
-#         index -= 1
+#     index=len(str)-1
+#     while index >=0:
 #         result += str[index]
+#         index -= 1
 #     print(result)
+#or
+# def reverse_string1(str):
+#     new_str=''
+#     for i in range(len(str)-1, -1, -1):
+#         new_str+=str[i]
+#     print(new_str)
 #
-# reverse_string('helloworld')
+# reverse_string1('hello')
 
 #13
 # def capitalizer(input):
@@ -115,10 +120,23 @@ import random
 #             result += x
 #         else:
 #             result += f' {x}'
-#     lower_result=result.lower().strip() #this line gets rifd of the white space in the begining and turns it to lower case
+    #this line gets rifd of the white space in the begining and turns it to lower case
+#     lower_result=result.lower().strip()
 #     print(lower_result.capitalize())
 #
 # word_seperator('StopAndSmellTheRoses.')
+
+def word_seperator2(str):
+    result=str[0]
+    for i in range(1, len(str)):
+        charater=str[i]
+        if charater.isupper():
+            charater=' ' + charater.lower()
+
+        result+=charater
+    print(result)
+
+word_seperator2('StopAndSmellTheRoses.')
 
 #15
 # def pig_latin_translator(str):
@@ -138,8 +156,8 @@ import random
 
 
 
-
 '''
+
 import tkinter
 from tkinter import *
 from tkinter import messagebox
@@ -210,15 +228,16 @@ class SalesTrackerGUI:
                     sales_done = (simpledialog.askstring(title = "Sales done by staff # "+str(i+1),
                                                            prompt="Enter Sales amount: "))
                     sales_done = float(sales_done)
-                    if i==0:
+                    if i==0: #assigning the initial values for both max and min
                             max_sales = sales_done
                             min_sales = sales_done
                     if sales_done > max_sales:
                             max_sales = sales_done
                     if sales_done < min_sales:
                             min_sales = sales_done
-                    i+=1
+
                     sum_of_sales += sales_done
+                    i += 1
 
             avg_sales = sum_of_sales / staff_num
 
@@ -232,7 +251,7 @@ class SalesTrackerGUI:
 my_Sales_Tracker = SalesTrackerGUI()
 
 '''
-
+'''
 import turtle
 
 ANIMATION_SPEED = 0
@@ -392,5 +411,5 @@ def main():
     turtle.done()
 
 main()
-
+'''
 
